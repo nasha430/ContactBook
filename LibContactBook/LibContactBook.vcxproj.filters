@@ -15,13 +15,34 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="main.c">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-  </ItemGroup>
-  <ItemGroup>
     <ClInclude Include="pch.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="MainMenu.c">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Add.c">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Search.c">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="PrintAll.c">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Remove.c">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Update.c">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Category.c">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Exit.c">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
