@@ -3,4 +3,6 @@
 void main() {
 	
 	Add();
+	Add();
+	Add();
 }
