@@ -9,13 +9,17 @@ struct USERDATA
 };
 
 void Add() {
-	struct USERDATA USERDATA = {
+	struct USERDATA UserData = {
 		"±è°æ¼ö",
 		"010-7554-9154",
 		0,
 		NULL
 	};
-	struct USERDATA *name = &USERDATA;
+	struct USERDATA *name = &UserData;
+
+	// USERDATA UserData = { 0 };
+	gets(UserData.szName);
+	puts(UserData.szName);
 	
 	printf("%s", name->szName);
 }
