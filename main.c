@@ -29,6 +29,12 @@ void main() {
 		else if (temp == 'P') {
 			PrintAll();
 		}
+		else if (temp == 'S') {
+			Search();
+		}
+		else if (temp == 'C') {
+			Category();
+		}
 		temp = "";
 	}
 
