@@ -1,5 +1,5 @@
+#define _CRT_SECURE_NO_WARNINGS
 #include "pch.h"
-#pragma warning(disable :4996)
 #include <stdio.h>
 #include <malloc.h>
 
@@ -12,21 +12,24 @@ typedef struct USERDATA
 } USERDATA;
 
 void main() {
-	char* menu = (char*)malloc(sizeof(char) + 1); // size 4 동적할당
+	char* add = "";
+	char* menu = malloc(sizeof(add) + 1); // size 4 동적할당
+	memset(menu, 0, sizeof(add) + 1);
 	char temp = "";
 
 	while (temp != 'X') {
-		temp = MainMenu(menu);
-		printf("들어오냐1");
+		MainMenu(menu);
+		temp = *menu;
+
 		if (temp == 'A') {
 			char* UserData = malloc(sizeof(UserData));
 			memset(UserData, 0, sizeof(UserData));
 			Add(UserData);
 		}
 		else if (temp == 'P') {
-			printf("들어오냐2");
 			PrintAll();
 		}
+		temp = "";
 	}
 
 	

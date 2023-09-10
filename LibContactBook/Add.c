@@ -33,7 +33,6 @@ void Add(char* UserData) {
 	}
 	else {
 		// 이전 구조체 주소에 현재 주소 넣기
-		printf("%p\n", pTmp);
 		USERDATA* prevContactBook;
 		prevContactBook = pTmp;
 		prevContactBook->pNext = UserData;

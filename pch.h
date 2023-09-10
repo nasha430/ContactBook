@@ -1,5 +1,5 @@
 ﻿#pragma once
-char MainMenu(menu_tmp);
+void MainMenu(char * menu_tmp);
 void Add();
 void Search(char* source);
 void PrintAll();
