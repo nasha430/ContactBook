@@ -15,9 +15,7 @@ typedef struct USERDATA
 
 void main() {
 	char* add = "";
-
-	char* menu = malloc(sizeof(add) + 1); // size 4 �����Ҵ�
-
+	char* menu = malloc(sizeof(add) + 1); // size 4 동적할당입니다!
 	memset(menu, 0, sizeof(add) + 1);
 	char temp = "";
 
