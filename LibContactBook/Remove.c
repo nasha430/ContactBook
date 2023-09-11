@@ -12,7 +12,7 @@ typedef struct USERDATA
 	struct USERDATA* pNext;
 } USERDATA;
 
-void Remove(char szName[]) {
+void Remove() {
 	printf("\n");
 	printf("--------------------------------ªË¡¶[R]--------------------------------\n");
 
@@ -26,8 +26,8 @@ void Remove(char szName[]) {
 	scanf("%s", name_ans);
 	puts(name_ans);
 
-	USERDATA* RemoveContact;
-	printf("%s", RemoveContact);
+	//USERDATA* RemoveContact;
+	//printf("%s", RemoveContact);
 
 	pFile = fopen("ContactBook.txt", "r");
 	if (pFile == NULL) perror("Error opening file");
