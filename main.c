@@ -1,9 +1,17 @@
-﻿#define _CRT_SECURE_NO_WARNINGS
+
+#define _CRT_SECURE_NO_WARNINGS
 
 #include "pch.h"
 #include <stdio.h>
 #include <malloc.h>
 
+typedef struct USERDATA
+{
+	char szName[32];
+	char szPhone[32];
+	int category;
+	struct USERDATA* pNext;
+} USERDATA;
 
 void main() {
 	char* add = "";
@@ -11,18 +19,14 @@ void main() {
 	memset(menu, 0, sizeof(add) + 1);
 	char temp = "";
 
-	USERDATA* List = NULL;
-	USERDATA* NewNode = NULL;
-
 	while (temp != 'X') {
 		MainMenu(menu);
 		temp = *menu;
 
 		if (temp == 'A') {
-			// 노드 생성
-			NewNode = Create();
-			// 노드 추가
-			Add(&List, NewNode);
+			char* UserData = malloc(sizeof(UserData));
+			memset(UserData, 0, sizeof(UserData));
+			Add(UserData);
 		}
 		else if (temp == 'P') {
 			PrintAll();
