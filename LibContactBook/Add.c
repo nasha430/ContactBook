@@ -24,7 +24,9 @@ void Add(char* UserData) {
 	scanf("%s", ContactBook->szPhone);
 	printf("카테고리에 맞는 숫자를 입력하세요. 친구[0], 가족[1], 직장[2], 기타[3]:");
 	scanf("%d", &ContactBook->category);
-	
+	getchar();
+
+
 	// 완전 처음에!
 	if (pTmp == NULL) {
 		// 현재 구조체는 NULL , 다음 주소에 넘길 주소를 pTmp 에 저장
@@ -42,7 +44,7 @@ void Add(char* UserData) {
 		ContactBook->pNext = NULL;
 	}
 
-	
+	 
 	FILE* pfile = NULL;
 	pfile = fopen("Contactbook.txt", "a");
 	fprintf(pfile, "\n");
