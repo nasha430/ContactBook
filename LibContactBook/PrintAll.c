@@ -1,4 +1,4 @@
-#define _CRT_SECURE_NO_WARNINGS
+ï»¿#define _CRT_SECURE_NO_WARNINGS
 #include "pch.h"
 #include <stdio.h>
 #include <malloc.h>
@@ -6,7 +6,7 @@
 
 void PrintAll() {
 	printf("\n");
-	printf("--------------------------------ÀüÃ¼ Ãâ·Â[P]--------------------------------\n");
+	printf("--------------------------------ì „ì²´ ì¶œë ¥[P]--------------------------------\n");
 
 	FILE* pFile = NULL;
 	char mystring[100];
@@ -14,13 +14,13 @@ void PrintAll() {
 	pFile = fopen("ContactBook.txt", "r");
 	if (pFile == NULL) perror("Error opening file");
 
-	// feof : ÁÖ¾îÁø ½ºÆ®¸²¿¡¼­ EOF(End Of File. ÆÄÀÏÀÇ ³¡)¸¦ °¨Áö
+	// feof : ì£¼ì–´ì§„ ìŠ¤íŠ¸ë¦¼ì—ì„œ EOF(End Of File. íŒŒì¼ì˜ ë)ë¥¼ ê°ì§€
 	while (feof(pFile) == 0) {
-		// fgets : fgets(¹öÆÛ,ÀĞÀ» ±æÀÌ,ÆÄÀÏ);
+		// fgets : fgets(ë²„í¼,ì½ì„ ê¸¸ì´,íŒŒì¼);
 		if (fgets(mystring, 100, pFile) != EOF) {
-			// ÆÄÀÏÀ» ÇÑ±¹¾î·Î ÀÎÄÚµù ÇØ¾ßÁö µÊ
+			// íŒŒì¼ì„ í•œêµ­ì–´ë¡œ ì¸ì½”ë”© í•´ì•¼ì§€ ë¨
 			printf("%s\n", mystring);
 		}
 	}
 	fclose(pFile);
-}
+} 
