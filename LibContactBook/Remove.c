@@ -14,31 +14,32 @@ typedef struct USERDATA
 
 void Remove() {
 	printf("\n");
-	printf("--------------------------------»èÁ¦[R]--------------------------------\n");
+	printf("--------------------------------ì‚­ì œ[R]--------------------------------\n");
 
-	FILE* pFile = NULL;
-	char mystring[100];
-	char name_tmp[100];
-	char name_ans[15];
 
-	printf("»èÁ¦ÇÏ°í ½ÍÀº ÀÌ¸§À» ÀÔ·ÂÇÏ¼¼¿ä : ");
-	//gets(name_ans);
-	scanf("%s", name_ans);
-	puts(name_ans);
+	//FILE* pFile = NULL;
+	//char mystring[100];
+	//char name_tmp[100];
+	//char name_ans[15];
+
+	//printf("ì‚­ì œí•˜ê³  ì‹¶ì€ ì´ë¦„ì„ ì…ë ¥í•˜ì„¸ìš” : ");
+	////gets(name_ans);
+	//scanf("%s", name_ans);
+	//puts(name_ans);
 
 	//USERDATA* RemoveContact;
 	//printf("%s", RemoveContact);
 
-	pFile = fopen("ContactBook.txt", "r");
-	if (pFile == NULL) perror("Error opening file");
+	//pFile = fopen("ContactBook.txt", "r");
+	//if (pFile == NULL) perror("Error opening file");
 
-	// feof : ÁÖ¾îÁø ½ºÆ®¸²¿¡¼­ EOF(End Of File. ÆÄÀÏÀÇ ³¡)¸¦ °¨Áö
-	while (feof(pFile) == 0) {
-		// fgets : fgets(¹öÆÛ,ÀĞÀ» ±æÀÌ,ÆÄÀÏ);
-		if (fgets(mystring, 100, pFile) != EOF) {
-			// ÆÄÀÏÀ» ÇÑ±¹¾î·Î ÀÎÄÚµù ÇØ¾ßÁö µÊ
-			printf("%s\n", mystring);
-		}
-	}
-	fclose(pFile);
+	//// feof : ì£¼ì–´ì§„ ìŠ¤íŠ¸ë¦¼ì—ì„œ EOF(End Of File. íŒŒì¼ì˜ ë)ë¥¼ ê°ì§€
+	//while (feof(pFile) == 0) {
+	//	// fgets : fgets(ë²„í¼,ì½ì„ ê¸¸ì´,íŒŒì¼);
+	//	if (fgets(mystring, 100, pFile) != EOF) {
+	//		// íŒŒì¼ì„ í•œêµ­ì–´ë¡œ ì¸ì½”ë”© í•´ì•¼ì§€ ë¨
+	//		printf("%s\n", mystring);
+	//	}
+	//}
+	//fclose(pFile);
 }
