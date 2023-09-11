@@ -1,4 +1,4 @@
-#define _CRT_SECURE_NO_WARNINGS
+﻿#define _CRT_SECURE_NO_WARNINGS
 #include "pch.h"
 #include <stdio.h>
 #include <stdlib.h>
@@ -11,9 +11,6 @@ typedef struct USERDATA
 } USERDATA;
 
 void Add(char* UserData) {
-
-
-
 	USERDATA* ContactBook;
 	// 동적할당 받은 주소를 구조체 변수에 할당하기
 	ContactBook = UserData;
@@ -54,6 +51,6 @@ void Add(char* UserData) {
 	FILE* pfile = NULL;
 	pfile = fopen("Contactbook.txt", "a");
 	fprintf(pfile, "\n");
-	fprintf(pfile, "이름: %s, 전화번호: %s, 카테고리: %d:, 현재 구조체 포인터: %p, 이전 구조체 포인터: %p, 최종 노드 구조체 포인터: %p", ContactBook->szName, ContactBook->szPhone, ContactBook->category, prevContactBook->pNext, prevContactBook, ContactBook->pNext);
+	fprintf(pfile, "이름: %s, 전화번호: %s, 카테고리: %d:, 현재 구조체 포인터: %p, 이전 구조체 포인터: %p, 최종 노드 구조체 포인터: %p", ContactBook->szName, ContactBook->szPhone, ContactBook->category, prevContactBook->pNext, UserData, ContactBook->pNext);
 	fclose(pfile);
 }
