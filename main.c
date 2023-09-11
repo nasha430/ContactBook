@@ -13,7 +13,7 @@ typedef struct USERDATA
 
 void main() {
 	char* add = "";
-	char* menu = malloc(sizeof(add) + 1); // size 4 동적할당
+	char* menu = malloc(sizeof(add) + 1); // size 4 동적할당입니다!
 	memset(menu, 0, sizeof(add) + 1);
 	char temp = "";
 
@@ -36,7 +36,10 @@ void main() {
 			Category();
 		}
 		else if (temp == 'R') {
-			Remove();
+			for (int i = 0; i < 5; i++) {
+				USERDATA = Remove(USERDATA, i);
+			}
+			
 		}
 		temp = "";
 	}
