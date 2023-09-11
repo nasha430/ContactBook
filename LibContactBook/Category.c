@@ -3,23 +3,32 @@
 #include <stdio.h>
 #include <malloc.h>
 
-void Category() {
+void Category(USERDATA* Head) {
 	printf("\n");
 	printf("--------------------------------카테고리 출력[C]--------------------------------\n");
+    int categ;
 
-	FILE* pFile = NULL;
-	char mystring[100];
+    printf("보고 싶은 카테고리에 맞는 숫자를 입력하세요. 친구[0], 가족[1], 직장[2], 기타[3]: ");
+    scanf("%d", categ);
+    getchar();
+    USERDATA* Current = Head;
 
-	pFile = fopen("ContactBook.txt", "r");
-	if (pFile == NULL) perror("Error opening file");
+    printf("카테고리: %d ", categ);
 
-	// feof : 주어진 스트림에서 EOF(End Of File. 파일의 끝)를 감지
-	while (feof(pFile) == 0) {
-		// fgets : fgets(버퍼,읽을 길이,파일);
-		if (fgets(mystring, 100, pFile) != EOF) {
-			// 파일을 한국어로 인코딩 해야지 됨
-			printf("%s\n", mystring);
-		}
-	}
-	fclose(pFile);
+    while (Current != NULL)
+    {
+        if (Current->category == categ) {
+            printf("[%p] ", Current);
+            printf("이름: %s ", Current->szName);
+            printf("전화번호: %s ", Current->szPhone);
+            
+            Current = Current->pNext;
+        }
+        else {
+            Current = Current->pNext;
+        }
+        
+            
+    }
+
 }
