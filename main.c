@@ -35,6 +35,9 @@ void main() {
 		else if (temp == 'C') {
 			Category();
 		}
+		else if (temp == 'R') {
+			Remove();
+		}
 		temp = "";
 	}
 
