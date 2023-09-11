@@ -11,43 +11,49 @@ typedef struct USERDATA
 } USERDATA;
 
 void Add(char* UserData) {
+
+
+
 	USERDATA* ContactBook;
-	// µ¿ÀûÇÒ´ç ¹ÞÀº ÁÖ¼Ò¸¦ ±¸Á¶Ã¼ º¯¼ö¿¡ ÇÒ´çÇÏ±â
+	// ë™ì í• ë‹¹ ë°›ì€ ì£¼ì†Œë¥¼ êµ¬ì¡°ì²´ ë³€ìˆ˜ì— í• ë‹¹í•˜ê¸°
 	ContactBook = UserData;
 
-	// »õ·Î¿î °ªÀÇ ÁÖ¼Ò¸¦ ÀÓ½Ã ÀúÀå
+	// ìƒˆë¡œìš´ ê°’ì˜ ì£¼ì†Œë¥¼ ìž„ì‹œ ì €ìž¥
 	static USERDATA* pTmp;
 
-	printf("Ãß°¡ÇÒ ÀÌ¸§À» ÀÔ·ÂÇÏ¼¼¿ä:");
+	USERDATA* prevContactBook = NULL;
+
+
+	printf("ì¶”ê°€í•  ì´ë¦„ì„ ìž…ë ¥í•˜ì„¸ìš”:");
 	scanf("%s", ContactBook->szName);
-	printf("ÀÌ¸§¿¡ ¸Â´Â ÀüÈ­¹øÈ£¸¦ ÀÔ·ÂÇÏ¼¼¿ä(010-0000-0000):");
+	printf("ì´ë¦„ì— ë§žëŠ” ì „í™”ë²ˆí˜¸ë¥¼ ìž…ë ¥í•˜ì„¸ìš”(010-0000-0000):");
 	scanf("%s", ContactBook->szPhone);
-	printf("Ä«Å×°í¸®¿¡ ¸Â´Â ¼ýÀÚ¸¦ ÀÔ·ÂÇÏ¼¼¿ä. Ä£±¸[0], °¡Á·[1], Á÷Àå[2], ±âÅ¸[3]:");
+	printf("ì¹´í…Œê³ ë¦¬ì— ë§žëŠ” ìˆ«ìžë¥¼ ìž…ë ¥í•˜ì„¸ìš”. ì¹œêµ¬[0], ê°€ì¡±[1], ì§ìž¥[2], ê¸°íƒ€[3]:");
 	scanf("%d", &ContactBook->category);
 	getchar();
 
-
-	// ¿ÏÀü Ã³À½¿¡!
+	// ì™„ì „ ì²˜ìŒì—!
 	if (pTmp == NULL) {
-		// ÇöÀç ±¸Á¶Ã¼´Â NULL , ´ÙÀ½ ÁÖ¼Ò¿¡ ³Ñ±æ ÁÖ¼Ò¸¦ pTmp ¿¡ ÀúÀå
+		// í˜„ìž¬ êµ¬ì¡°ì²´ëŠ” NULL , ë‹¤ìŒ ì£¼ì†Œì— ë„˜ê¸¸ ì£¼ì†Œë¥¼ pTmp ì— ì €ìž¥
 		pTmp = UserData;
 		ContactBook->pNext = NULL;
 	}
 	else {
-		// ÀÌÀü ±¸Á¶Ã¼ ÁÖ¼Ò¿¡ ÇöÀç ÁÖ¼Ò ³Ö±â
-		USERDATA* prevContactBook;
+		// ì´ì „ êµ¬ì¡°ì²´ ì£¼ì†Œì— í˜„ìž¬ ì£¼ì†Œ ë„£ê¸°
+
 		prevContactBook = pTmp;
 		prevContactBook->pNext = UserData;
 
-		// ÇöÀç ±¸Á¶Ã¼´Â NULL , ´ÙÀ½ ÁÖ¼Ò¿¡ ³Ñ±æ ÁÖ¼Ò¸¦ pTmp ¿¡ ÀúÀå
+		// í˜„ìž¬ êµ¬ì¡°ì²´ëŠ” NULL , ë‹¤ìŒ ì£¼ì†Œì— ë„˜ê¸¸ ì£¼ì†Œë¥¼ pTmp ì— ì €ìž¥
 		pTmp = UserData;
 		ContactBook->pNext = NULL;
 	}
 
-	 
+
+
 	FILE* pfile = NULL;
 	pfile = fopen("Contactbook.txt", "a");
 	fprintf(pfile, "\n");
-	fprintf(pfile, "ÀÌ¸§: %s, ÀüÈ­¹øÈ£: %s, Ä«Å×°í¸®: %d", ContactBook->szName, ContactBook->szPhone, ContactBook->category);
+	fprintf(pfile, "ì´ë¦„: %s, ì „í™”ë²ˆí˜¸: %s, ì¹´í…Œê³ ë¦¬: %d:, í˜„ìž¬ êµ¬ì¡°ì²´ í¬ì¸í„°: %p, ì´ì „ êµ¬ì¡°ì²´ í¬ì¸í„°: %p, ìµœì¢… ë…¸ë“œ êµ¬ì¡°ì²´ í¬ì¸í„°: %p", ContactBook->szName, ContactBook->szPhone, ContactBook->category, prevContactBook->pNext, prevContactBook, ContactBook->pNext);
 	fclose(pfile);
 }

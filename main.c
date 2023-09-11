@@ -1,4 +1,6 @@
+
 #define _CRT_SECURE_NO_WARNINGS
+
 #include "pch.h"
 #include <stdio.h>
 #include <malloc.h>
@@ -13,7 +15,9 @@ typedef struct USERDATA
 
 void main() {
 	char* add = "";
-	char* menu = malloc(sizeof(add) + 1); // size 4 µ¿ÀûÇÒ´ç
+
+	char* menu = malloc(sizeof(add) + 1); // size 4 ï¿½ï¿½ï¿½ï¿½ï¿½Ò´ï¿½
+
 	memset(menu, 0, sizeof(add) + 1);
 	char temp = "";
 
@@ -29,6 +33,7 @@ void main() {
 		else if (temp == 'P') {
 			PrintAll();
 		}
+
 		else if (temp == 'S') {
 			Search();
 		}
