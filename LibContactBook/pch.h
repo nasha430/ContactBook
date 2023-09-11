@@ -13,9 +13,10 @@ USERDATA* Create();
 void Add(USERDATA** Head, USERDATA* NewNode);
 void Search();
 void PrintAll();
-void Remove();
+USERDATA* SLL_GetNodeAt(USERDATA* Head);
+void Remove(USERDATA** Head, USERDATA* Remove);
 void Update();
-void Category();
+void Category(USERDATA* Head);
 void UI();
 void Exit();
 

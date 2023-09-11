@@ -32,10 +32,11 @@ void main() {
 			Search();
 		}
 		else if (temp == 'C') {
-			Category();
+			Category(List);
 		}
 		else if (temp == 'R') {
-			Remove();
+			NewNode = SLL_GetNodeAt(List);
+			Remove(&List, NewNode);
 		}
 		temp = "";
 	}
