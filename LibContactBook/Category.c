@@ -4,6 +4,8 @@
 #include <malloc.h>
 
 void Category(USERDATA* Head) {
+    CategoryUI();
+
     int categ;
     scanf("%d", categ);
     getchar();
