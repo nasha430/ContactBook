@@ -17,6 +17,6 @@ USERDATA* SLL_GetNodeAt(USERDATA* Head);
 void Remove(USERDATA** Head, USERDATA* Remove);
 void Update();
 void Category(USERDATA* Head);
-void UI();
+void RemoveUI();
 void Exit();
 

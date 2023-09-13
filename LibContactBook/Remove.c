@@ -6,11 +6,10 @@
 
 USERDATA* SLL_GetNodeAt(USERDATA* Head)
 {
-	printf("\n");
-	printf("--------------------------------삭제[R]--------------------------------\n");
-	char removeName[15];
 
-	printf("삭제하고 싶은 이름을 입력하세요 : ");
+	RemoveUI();
+
+	char removeName[15];	
 	scanf("%s", removeName);
 	getchar();
 
