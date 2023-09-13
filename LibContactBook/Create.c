@@ -7,6 +7,8 @@
 
 //  노드 생성 
 USERDATA* Create() {
+	CreateUI();
+
 	USERDATA* ContactBook = (USERDATA*)malloc(sizeof(USERDATA));
 
 	char name[32];
