@@ -18,5 +18,6 @@ void Remove(USERDATA** Head, USERDATA* Remove);
 void Update();
 void Category(USERDATA* Head);
 void RemoveUI();
+void CategoryUI();
 void Exit();
 
