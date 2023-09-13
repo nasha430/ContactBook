@@ -144,11 +144,13 @@
   <ItemGroup>
     <ClCompile Include="Add.c" />
     <ClCompile Include="Category.c" />
+    <ClCompile Include="Create.c" />
     <ClCompile Include="Exit.c" />
     <ClCompile Include="MainMenu.c" />
     <ClCompile Include="PrintAll.c" />
     <ClCompile Include="Remove.c" />
     <ClCompile Include="Search.c" />
+    <ClCompile Include="UI.c" />
     <ClCompile Include="Update.c" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
