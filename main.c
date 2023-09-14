@@ -29,7 +29,7 @@ void main() {
 		}
 
 		else if (temp == 'S') {
-			Search();
+			Search_test(&List);
 		}
 		else if (temp == 'C') {
 			Category(List);
