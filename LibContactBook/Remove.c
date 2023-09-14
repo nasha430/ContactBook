@@ -4,42 +4,43 @@
 #include <malloc.h>
 #include <locale.h>
 
-typedef struct USERDATA
+USERDATA* SLL_GetNodeAt(USERDATA* Head)
 {
-	char szName[32];
-	char szPhone[32];
-	int category;
-	struct USERDATA* pNext;
-} USERDATA;
 
-void Remove() {
-	printf("\n");
-	printf("--------------------------------삭제[R]--------------------------------\n");
+	RemoveUI();
 
+	char removeName[15];	
+	scanf("%s", removeName);
+	getchar();
 
-	//FILE* pFile = NULL;
-	//char mystring[100];
-	//char name_tmp[100];
-	//char name_ans[15];
+	USERDATA* Current = Head;
 
-	//printf("삭제하고 싶은 이름을 입력하세요 : ");
-	////gets(name_ans);
-	//scanf("%s", name_ans);
-	//puts(name_ans);
+	while (Current != NULL && removeName==Head->szName)
+	{
+		Current = Current->pNext;
+	}
 
-	//USERDATA* RemoveContact;
-	//printf("%s", RemoveContact);
+	return Current;
+}
 
-	//pFile = fopen("ContactBook.txt", "r");
-	//if (pFile == NULL) perror("Error opening file");
+void Remove(USERDATA** Head, USERDATA* Remove) {
 
-	//// feof : 주어진 스트림에서 EOF(End Of File. 파일의 끝)를 감지
-	//while (feof(pFile) == 0) {
-	//	// fgets : fgets(버퍼,읽을 길이,파일);
-	//	if (fgets(mystring, 100, pFile) != EOF) {
-	//		// 파일을 한국어로 인코딩 해야지 됨
-	//		printf("%s\n", mystring);
-	//	}
-	//}
-	//fclose(pFile);
+	//  노드 제거 
+	{
+		if (*Head == Remove)
+		{
+			*Head = Remove->pNext;
+		}
+		else
+		{
+			USERDATA* Current = *Head;
+			while (Current != NULL && Current->pNext != Remove)
+			{
+				Current = Current->pNext;
+			}
+
+			if (Current != NULL)
+				Current->pNext = Remove->pNext;
+		}
+	}
 }
