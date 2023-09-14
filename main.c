@@ -11,7 +11,8 @@ void main() {
 	memset(menu, 0, sizeof(add) + 1);
 	char temp = "";
 
-	USERDATA* List = NULL;
+	USERDATA* ContactList = (USERDATA*)malloc(sizeof(USERDATA));
+	USERDATA* ContactBook = NULL;
 	USERDATA* NewNode = NULL;
 
 	while (temp != 'X') {
@@ -22,7 +23,7 @@ void main() {
 			// 노드 생성
 			NewNode = Create();
 			// 노드 추가
-			Add(&List, NewNode);
+			ContactList = Add(&ContactBook, NewNode);
 		}
 		else if (temp == 'P') {
 			PrintAll();
@@ -32,11 +33,11 @@ void main() {
 			Search();
 		}
 		else if (temp == 'C') {
-			Category(List);
+			Category(ContactList);
 		}
 		else if (temp == 'R') {
-			NewNode = SLL_GetNodeAt(List);
-			Remove(&List, NewNode);
+			NewNode = SLL_GetNodeAt(ContactList);
+			Remove(&ContactList, NewNode);
 		}
 		temp = "";
 	}

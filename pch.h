@@ -10,7 +10,7 @@ typedef struct USERDATA
 
 void MainMenu(menu_tmp);
 USERDATA* Create();
-void Add(USERDATA** Head, USERDATA* NewNode);
+USERDATA* Add(USERDATA** Head, USERDATA* NewNode);
 void Search();
 void PrintAll();
 USERDATA* SLL_GetNodeAt(USERDATA* Head);

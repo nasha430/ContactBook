@@ -14,8 +14,12 @@ USERDATA* SLL_GetNodeAt(USERDATA* Head)
 	getchar();
 
 	USERDATA* Current = Head;
+	
+//	gets(Head);
+	puts(Current);
+	puts(Head);
 
-	while (Current != NULL && removeName==Head->szName)
+	while (Current != NULL && removeName!=Head->szName)
 	{
 		Current = Current->pNext;
 	}
