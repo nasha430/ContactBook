@@ -4,23 +4,22 @@
 #include <malloc.h>
 #include <locale.h>
 
-void PrintAll() {
-	printf("\n");
-	printf("--------------------------------전체 출력[P]--------------------------------\n");
+USERDATA* PrintAll(USERDATA* Head)
+{
 
-	FILE* pFile = NULL;
-	char mystring[100];
+	USERDATA* Current = Head;
 
-	pFile = fopen("ContactBook.txt", "r");
-	if (pFile == NULL) perror("Error opening file");
+	while (Current != NULL)
+	{
+		puts(Current);
+		printf("[%p] ", Current);
+		printf("이름: %s ", Current->szName);
+		printf("전화번호: %s ", Current->szPhone);
+		printf("카테고리: %d ", Current->category);
+		printf("이전 구조체 포인터 : %p\n", Current->pNext);
 
-	// feof : 주어진 스트림에서 EOF(End Of File. 파일의 끝)를 감지
-	while (feof(pFile) == 0) {
-		// fgets : fgets(버퍼,읽을 길이,파일);
-		if (fgets(mystring, 100, pFile) != EOF) {
-			// 파일을 한국어로 인코딩 해야지 됨
-			printf("%s\n", mystring);
-		}
+		Current = Current->pNext;
 	}
-	fclose(pFile);
+
+	return Current;
 }
