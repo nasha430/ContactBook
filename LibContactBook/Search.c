@@ -5,15 +5,13 @@
 #include <stdlib.h>
 
 void Search(char* source) {
-	printf("\n");
-	printf("--------------------------------검색[S]--------------------------------\n");
+	SearchUI();
 
 	FILE* pFile = NULL;
 
 	char name_tmp[100];
 	char name_ans[15];
 
-	printf("검색하고 싶은 이름을 입력하세요 : ");
 	//gets(name_ans);
 	scanf("%s", name_ans);
 	puts(name_ans);
