@@ -10,9 +10,9 @@ typedef struct USERDATA
 
 void MainMenu(char* menu);
 char* Find(USERDATA* Head, char* name);
-USERDATA* Create();
+USERDATA* Create(USERDATA** Head);
 USERDATA* Add(USERDATA** Head, USERDATA* NewNode);
-void Search();
+void Search(USERDATA* Head);
 USERDATA* PrintAll(USERDATA* Head);
 USERDATA* SLL_GetNodeAt(USERDATA* Head);
 void Remove(USERDATA** Head, USERDATA* Remove);
