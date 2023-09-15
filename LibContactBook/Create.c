@@ -28,7 +28,7 @@ USERDATA* Create() {
 	ContactBook->category = num;  //  데이터를 저장한다. 
 	ContactBook->pNext = NULL; //  다음 노드에 대한 포인터는 NULL로 초기화 한다. 
 
-	printf("%s_%s_%d\n", ContactBook->szName, ContactBook->szPhone, ContactBook->category);
+	//printf("%s_%s_%d\n", ContactBook->szName, ContactBook->szPhone, ContactBook->category);
 
 	return ContactBook;
 }
