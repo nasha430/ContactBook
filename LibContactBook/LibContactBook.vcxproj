@@ -149,6 +149,7 @@
     <ClCompile Include="InputFile.c" />
     <ClCompile Include="MainMenu.c" />
     <ClCompile Include="PrintAll.c" />
+    <ClCompile Include="Reallocation.c" />
     <ClCompile Include="Remove.c" />
     <ClCompile Include="Search.c" />
     <ClCompile Include="UI.c" />

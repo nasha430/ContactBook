@@ -3,20 +3,26 @@
 #include <stdio.h>
 #include <malloc.h>
 #include <locale.h>
+#include <string.h>
 
 USERDATA* SLL_GetNodeAt(USERDATA* Head)
 {
 
 	RemoveUI();
-
+	
 	char removeName[15];	
+	char removeTemp[15];
 	scanf("%s", removeName);
 	getchar();
 
 	USERDATA* Current = Head;
 
-	while (Current != NULL && removeName==Head->szName)
-	{
+	while (Current != NULL)
+	{	
+		strcpy(removeTemp, Current->szName);
+		if (*removeName == *removeTemp) {
+			break;
+		}
 		Current = Current->pNext;
 	}
 
@@ -34,8 +40,11 @@ void Remove(USERDATA** Head, USERDATA* Remove) {
 		else
 		{
 			USERDATA* Current = *Head;
-			while (Current != NULL && Current->pNext != Remove)
+			while (Current != NULL)
 			{
+				if (Current->pNext == Remove) {
+					break;
+				}
 				Current = Current->pNext;
 			}
 

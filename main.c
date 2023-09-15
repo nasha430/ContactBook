@@ -6,15 +6,14 @@
 
 
 void main() {
-	char* add = "";
-	char* menu = malloc(sizeof(add) + 1); // size 4 동적할당입니다!
-	memset(menu, 0, sizeof(add) + 1);
+	char* add;
+	char* menu = malloc(sizeof(add)); // size 4 동적할당입니다!
+	memset(menu, 0, sizeof(add));
 	char temp = "";
-
-
 
 	USERDATA* Head = malloc(sizeof(USERDATA)+1);
 	Head = NULL;
+
 	USERDATA* NewNode = NULL;
 
 	while (temp != 'X') {
@@ -25,12 +24,17 @@ void main() {
 			// 노드 생성
 			NewNode = Create();
 			// 노드 추가
+
 			Add(&Head, NewNode);
+
 		}
-		else if (temp == 'P') {
-			PrintAll();
+		else if (temp == 'L') {
+			Reallocation(ContactList);
 		}
 
+		else if (temp == 'P') {
+			PrintAll(ContactList);
+		}
 		else if (temp == 'S') {
 			Search_test(Head);
 		}
@@ -40,9 +44,8 @@ void main() {
 		else if (temp == 'R') {
 			NewNode = SLL_GetNodeAt(Head);
 			Remove(&Head, NewNode);
+
 		}
 		temp = "";
 	}
-
-
 }

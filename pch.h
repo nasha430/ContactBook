@@ -12,14 +12,19 @@ void MainMenu(menu_tmp);
 USERDATA* Create();
 USERDATA* Add(USERDATA** Head, USERDATA* NewNode);
 void Search();
-void Search_test();
-void PrintAll();
+USERDATA* PrintAll(USERDATA* Head);
 USERDATA* SLL_GetNodeAt(USERDATA* Head);
 void Remove(USERDATA** Head, USERDATA* Remove);
 void Update();
 void Category(USERDATA* Head);
+
+void PrintAllUI();
+void MainMenuUI();
 void RemoveUI();
 void CategoryUI();
 void CreateUI();
-void Exit();
+void SearchUI();
 
+USERDATA* Reallocation();
+void Exit();
+void InputFile();
