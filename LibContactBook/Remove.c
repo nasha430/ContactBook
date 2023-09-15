@@ -4,41 +4,43 @@
 #include <malloc.h>
 #include <locale.h>
 
-typedef struct USERDATA
+USERDATA* SLL_GetNodeAt(USERDATA* Head)
 {
-	char szName[32];
-	char szPhone[32];
-	int category;
-	struct USERDATA* pNext;
-} USERDATA;
 
-void Remove(char szName[]) {
-	//printf("\n");
-	//printf("--------------------------------»èÁ¦[R]--------------------------------\n");
+	RemoveUI();
 
-	//FILE* pFile = NULL;
-	//char mystring[100];
-	//char name_tmp[100];
-	//char name_ans[15];
+	char removeName[15];	
+	scanf("%s", removeName);
+	getchar();
 
-	//printf("»èÁ¦ÇÏ°í ½ÍÀº ÀÌ¸§À» ÀÔ·ÂÇÏ¼¼¿ä : ");
-	////gets(name_ans);
-	//scanf("%s", name_ans);
-	//puts(name_ans);
+	USERDATA* Current = Head;
 
-	//USERDATA* RemoveContact;
-	//printf("%s", RemoveContact);
+	while (Current != NULL && removeName==Head->szName)
+	{
+		Current = Current->pNext;
+	}
 
-	//pFile = fopen("ContactBook.txt", "r");
-	//if (pFile == NULL) perror("Error opening file");
+	return Current;
+}
 
-	//// feof : ÁÖ¾îÁø ½ºÆ®¸²¿¡¼­ EOF(End Of File. ÆÄÀÏÀÇ ³¡)¸¦ °¨Áö
-	//while (feof(pFile) == 0) {
-	//	// fgets : fgets(¹öÆÛ,ÀÐÀ» ±æÀÌ,ÆÄÀÏ);
-	//	if (fgets(mystring, 100, pFile) != EOF) {
-	//		// ÆÄÀÏÀ» ÇÑ±¹¾î·Î ÀÎÄÚµù ÇØ¾ßÁö µÊ
-	//		printf("%s\n", mystring);
-	//	}
-	//}
-	//fclose(pFile);
+void Remove(USERDATA** Head, USERDATA* Remove) {
+
+	//  ë…¸ë“œ ì œê±° 
+	{
+		if (*Head == Remove)
+		{
+			*Head = Remove->pNext;
+		}
+		else
+		{
+			USERDATA* Current = *Head;
+			while (Current != NULL && Current->pNext != Remove)
+			{
+				Current = Current->pNext;
+			}
+
+			if (Current != NULL)
+				Current->pNext = Remove->pNext;
+		}
+	}
 }
