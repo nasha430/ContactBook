@@ -27,4 +27,4 @@ void SearchUI();
 
 USERDATA* Reallocation();
 void Exit();
-
+void InputFile();

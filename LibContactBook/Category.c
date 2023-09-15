@@ -4,7 +4,7 @@
 #include <malloc.h>
 
 void Category(USERDATA* Head) {
-    CategoryUI();
+ /*   CategoryUI();
 
     int categ;
     scanf("%d", categ);
@@ -27,6 +27,6 @@ void Category(USERDATA* Head) {
         }
         
             
-    }
+    }*/
 
 }
