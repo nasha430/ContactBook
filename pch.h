@@ -8,14 +8,15 @@ typedef struct USERDATA
 	struct USERDATA* pNext;
 } USERDATA;
 
-void MainMenu(menu_tmp);
+void MainMenu(char* menu);
+char* Find(USERDATA* Head, char* name);
 USERDATA* Create();
 USERDATA* Add(USERDATA** Head, USERDATA* NewNode);
 void Search();
 USERDATA* PrintAll(USERDATA* Head);
 USERDATA* SLL_GetNodeAt(USERDATA* Head);
 void Remove(USERDATA** Head, USERDATA* Remove);
-void Update();
+void Update(USERDATA* Head);
 void Category(USERDATA* Head);
 
 void PrintAllUI();
