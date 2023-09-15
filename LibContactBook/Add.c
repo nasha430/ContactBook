@@ -3,7 +3,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-void Add(USERDATA** Head, USERDATA* NewNode) {
+USERDATA* Add(USERDATA** Head, USERDATA* NewNode) {
     //  헤드 노드가 NULL이라면 새로운 노드가 Head 
     USERDATA* Temp = NULL;
 

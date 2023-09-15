@@ -4,13 +4,14 @@
 #include <string.h>
 #include <stdlib.h>
 
-USERDATA* Search_test(USERDATA* Head)
+void Search_test(USERDATA* Head)
 {
 	USERDATA* Current = Head;
-	char* compareName = "";
+	char compareName[32];
 	printf("검색하고 싶은 이름을 입력하세요 : ");
-	scanf("%s", &compareName);
+	scanf("%s", compareName);
 	//Current->pNext가 볼 포인터가 있고 구조체이름과 검색할 이름이 같지 않으면, Current주소는 다음 구조체로 넘어간다
+	
 	while (strcmp(Current->szName, compareName) != 0 && Current->pNext != NULL)
 	{
 		Current = Current->pNext;
@@ -19,9 +20,8 @@ USERDATA* Search_test(USERDATA* Head)
 	if (strcmp(Current->szName, compareName) == 0) {
 		printf("%s\n", Current->szName);
 		printf("%s\n", Current->szPhone);
-		printf("%s\n", Current->category);
+		printf("%d\n", Current->category);
 	}
-	return Current;
 }
 
 
