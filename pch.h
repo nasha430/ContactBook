@@ -10,6 +10,7 @@ typedef struct USERDATA
 
 void MainMenu(menu_tmp);
 USERDATA* Create();
+USERDATA* Create_Pointer();
 USERDATA* Add(USERDATA** Head, USERDATA* NewNode);
 void Search();
 USERDATA* PrintAll(USERDATA* Head);
@@ -25,6 +26,6 @@ void CategoryUI();
 void CreateUI();
 void SearchUI();
 
-USERDATA* Reallocation();
+void Reallocation(USERDATA**);
 void Exit();
 void InputFile();
