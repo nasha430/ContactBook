@@ -29,14 +29,14 @@ void main() {
 
 		}
 		else if (temp == 'L') {
-			Reallocation(ContactList);
+			Reallocation(Head);
 		}
 
 		else if (temp == 'P') {
-			PrintAll(ContactList);
+			PrintAll(Head);
 		}
 		else if (temp == 'S') {
-			Search_test(Head);
+			Search(Head);
 		}
 		else if (temp == 'C') {
 			Category(Head);
