@@ -3,6 +3,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+
 void Reallocation(USERDATA** Head)
 {
 	*Head = NULL;
@@ -15,11 +16,17 @@ void Reallocation(USERDATA** Head)
 	char* cmpName = "이름:";
 	char* cmpPhone = "전화번호:";
 	char* cmpCategory = "카테고리:";
+	if (pFile == NULL) {
+		pFile = fopen("Contactbook.txt", "a");
+		fclose(pFile);
+	}
 	pFile = fopen("Contactbook.txt", "r");
+
 	// 파일 끝까지 읽기
 	while (feof(pFile) == 0) {
 		NewNode = Create_Pointer();
 		//한줄씩 읽기
+		pszToken = "";
 		if (fgets(Name, 100, pFile) != EOF) {
 			// " "으로 토큰화
 			pszToken = strtok(Name, pszSep);
@@ -31,8 +38,11 @@ void Reallocation(USERDATA** Head)
 				}
 				//이름:을 만나면 다음 토큰인 이름을 저장한다.
 				else if (strcmp(pszToken, cmpName) == 0) {
+					printf("%s : ", pszToken);
 					pszToken = strtok(NULL, pszSep);
+					printf("%s : n", pszToken);
 					strcpy(NewNode->szName, pszToken);
+
 					continue;
 				}
 				//전화번호:을 만나면 다음 토큰인 전화번호를 저장한다.
@@ -45,16 +55,18 @@ void Reallocation(USERDATA** Head)
 				else if (strcmp(pszToken, cmpCategory) == 0) {
 					pszToken = strtok(NULL, pszSep);
 					NewNode->category = atoi(pszToken);
+
 					continue;
 				}
 				//\n등의 토큰을 뺀다.
 				pszToken = strtok(NULL, pszSep);
+				printf("%s\n", pszToken);
 			}
 		}
 		if (NewNode->category != NULL) {
 			if ((*Head) == NULL)
 			{
-				
+
 				*Head = NewNode;
 			}
 			else
