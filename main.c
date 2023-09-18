@@ -14,7 +14,7 @@ void main() {
 	USERDATA* Head = malloc(sizeof(USERDATA)+1);
 	memset(Head, 0, sizeof(USERDATA) + 1);
 	USERDATA* NewNode = NULL;
-	
+	Reallocation(&Head);
 	while (temp != 'X') {
 		MainMenu(menu);
 		temp = *menu;
@@ -28,7 +28,7 @@ void main() {
 
 		}
 		else if (temp == 'L') {
-			Reallocation(&Head);
+			
 		}
 
 		else if (temp == 'P') {

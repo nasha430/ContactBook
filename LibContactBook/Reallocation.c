@@ -44,7 +44,7 @@ void Reallocation(USERDATA** Head)
 				//카테고리:을 만나면 다음 토큰인 카테고리를 저장한다.
 				else if (strcmp(pszToken, cmpCategory) == 0) {
 					pszToken = strtok(NULL, pszSep);
-					NewNode->category = pszToken;
+					NewNode->category = atoi(pszToken);
 					continue;
 				}
 				//\n등의 토큰을 뺀다.
