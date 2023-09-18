@@ -26,8 +26,8 @@ USERDATA* Add(USERDATA** Head, USERDATA* NewNode) {
         Tail->pNext = NewNode;
     }
 
-    printf("%p\n", Temp);
-    printf("%p", NewNode);
+    //printf("%p\n", Temp);   // 이전 주소
+    //printf("%p", NewNode);  // 현재 주소
 
     FILE* pfile = NULL;
     pfile = fopen("Contactbook.txt", "a");

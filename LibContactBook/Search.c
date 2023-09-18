@@ -6,9 +6,10 @@
 
 void Search(USERDATA* Head)
 {
+	SearchUI();
+
 	USERDATA* Current = Head;
 	char compareName[32];
-	printf("검색하고 싶은 이름을 입력하세요 : ");
 	scanf("%s", compareName);
 	//Current->pNext가 볼 포인터가 있고 구조체이름과 검색할 이름이 같지 않으면, Current주소는 다음 구조체로 넘어간다
 	

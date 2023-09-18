@@ -11,7 +11,6 @@ USERDATA* PrintAll(USERDATA* Head)
 
 	while (Current != NULL)
 	{
-		puts(Current);
 		printf("[%p] ", Current);
 		printf("이름: %s ", Current->szName);
 		printf("전화번호: %s ", Current->szPhone);
