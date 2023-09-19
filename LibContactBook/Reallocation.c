@@ -38,9 +38,7 @@ void Reallocation(USERDATA** Head)
 				}
 				//이름:을 만나면 다음 토큰인 이름을 저장한다.
 				else if (strcmp(pszToken, cmpName) == 0) {
-					printf("%s : ", pszToken);
 					pszToken = strtok(NULL, pszSep);
-					printf("%s : n", pszToken);
 					strcpy(NewNode->szName, pszToken);
 
 					continue;
@@ -60,7 +58,6 @@ void Reallocation(USERDATA** Head)
 				}
 				//\n등의 토큰을 뺀다.
 				pszToken = strtok(NULL, pszSep);
-				printf("%s\n", pszToken);
 			}
 		}
 		if (NewNode->category != NULL) {
@@ -76,7 +73,6 @@ void Reallocation(USERDATA** Head)
 				while (Tail->pNext != NULL)
 				{
 					Tail = Tail->pNext;
-
 				}
 				// 이전 주소
 				Temp = Tail;
